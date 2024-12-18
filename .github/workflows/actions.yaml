@@ -1,0 +1,16 @@
+name: Triggered by Repo B
+
+on:
+  repository_dispatch:
+    types: [triggered_by_repo_b]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Print Trigger Info
+        run: echo "Triggered by Repo B!"
