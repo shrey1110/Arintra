@@ -27,21 +27,11 @@ public class LandingPage extends BaseUI {
 		Thread.sleep(2000);
 	}
 
-	public void datafill() throws InterruptedException {
-		enterValue("name_id","Shreyansh");
-		enterValue("org_id","Arinta");
-		enterValue("email_id","shreyanshsurana@gmail.com");
-		enterValue("phone_id","9854712537");
-		Thread.sleep(2000);
-		//elementclick("scheduleDemo_xpath");
-		//Actions actions = new Actions(driver);
-
-		//actions.moveToElement(getElement("scheduleDemo_xpath")).click().perform();
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-
-		jse.executeScript("arguments[0].scrollIntoView()", getElement("scheduleDemo_xpath"));
-		waitLoad(1);
-		elementclick("scheduleDemo_xpath");
+	public void selectDateTime() throws InterruptedException {
+		switchWindow();
+		elementclick("date_xpath");
+		elementclick("time_xpath");
+		takeScreenShots();
 
 
 	}
