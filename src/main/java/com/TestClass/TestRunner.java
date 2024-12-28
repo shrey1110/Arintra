@@ -20,7 +20,7 @@ public class TestRunner extends BaseUI {
 		bu.invokeBrowser("browserName", "osName");
 		landingpage = bu.openURL("websiteURL");
 		landingpage.requestDemo();
-		landingpage.datafill();
+		landingpage.selectDateTime();
 		bu.closeBrowser();
 
 	}
