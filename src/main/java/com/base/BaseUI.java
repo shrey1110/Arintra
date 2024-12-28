@@ -247,4 +247,15 @@ public class BaseUI {
 	public void reportPass(String reportString) {
 		logger.log(Status.PASS, reportString);
 	}
+
+	public void switchWindow(){
+		String parent = driver.getWindowHandle();
+		Set<String> windows = driver.getWindowHandles();
+		for (String w : windows){
+			if(!w.equals(parent)){
+				driver.switchTo().window(w);
+				break;
+			}
+		}
+	}
 }
